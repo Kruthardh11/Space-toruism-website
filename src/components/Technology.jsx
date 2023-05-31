@@ -12,7 +12,7 @@ import Navbar from './Navbar';
 
 
 const Technology = () => {
-  const [activeSection, setActiveSection] = useState('sec1'); // Set initial active section to 1
+  const [activeSection, setActiveSection] = useState('sec3'); // Set initial active section to 1
 
   const handleSectionChange = (section) => {
     setActiveSection(section);
@@ -46,32 +46,46 @@ const Technology = () => {
       {/* desktop View */}
       
       <div className=" hidden md:flex">
-      <nav className="flex flex-col justify-center items-center bg-gray-200">
-        <button
-          className={`py-2 px-4 font-barlow tracking-[1px] ${
-            activeSection === 'sec1' ? 'bg-white text-black' : 'text-gray-500'
-          }`}
-          onClick={() => handleSectionChange('sec1')}
-        >
-          1
-        </button>
-        <button
-          className={`py-2 px-4 font-barlow tracking-[1px] ${
-            activeSection === 'sec2' ? 'bg-white text-black' : 'text-gray-500'
-          }`}
-          onClick={() => handleSectionChange('sec2')}
-        >
-          2
-        </button>
-        <button
-          className={`py-2 px-4 font-barlow tracking-[1px] ${
-            activeSection === 'sec3' ? 'bg-white text-black' : 'text-gray-500'
-          }`}
-          onClick={() => handleSectionChange('sec3')}
-        >
-          3
-        </button>
+      <p className='flex text-white font-barlow text-md tracking-[2px] ml-[7%] mt-[5%]'> <p className='opacity-30 mr-[5%]  text-md'>03</p> Space Launch 101</p>
+
+      
+      <nav className="flex flex-col justify-center items-center mt-[5%] ">
+      <button
+        className={`mb-7 py-2 px-4 font-barlow text-xl tracking-[1px] rounded-full ${
+          activeSection === 'sec1' ? 'bg-white text-black' : 'text-white'
+        }`}
+        onClick={() => handleSectionChange('sec1')}
+      >
+        1
+      </button>
+      <button
+        className={` mb-7 py-2 px-4 text-xl font-barlow tracking-[1px] rounded-full ${
+          activeSection === 'sec2' ? 'bg-white text-black' : 'text-white'
+        }`}
+        onClick={() => handleSectionChange('sec2')}
+      >
+        2
+      </button>
+      <button
+        className={`mb-7 py-2 px-4 text-xl font-barlow tracking-[1px] rounded-full ${
+          activeSection === 'sec3' ? 'bg-white text-black' : 'text-white'
+        }`}
+        onClick={() => handleSectionChange('sec3')}
+      >
+        3
+      </button>
       </nav>
+      <div className="container mt-[15%]">
+        {/* Content corresponding to the active section */}
+        {activeSection === 'sec1' && <Sec1 />}
+        {activeSection === 'sec2' && <Sec2 />}
+        {activeSection === 'sec3' && <Sec3 />}
+      </div>
+      <div className='mt-[20%]  '>
+        {activeSection === 'sec1' && <img className=' ' src={launchimg} alt="" />}
+        {activeSection === 'sec2' && <img className='' src={spaceimg} alt="" />}
+        {activeSection === 'sec3' && <img className='' src={spaceSportimg} alt="" />}
+      </div>
 
         
       </div>
@@ -111,7 +125,7 @@ const Technology = () => {
         3
       </button>
       </nav>
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-8 ">
         {/* Content corresponding to the active section */}
         {activeSection === 'sec1' && <Sec1 />}
         {activeSection === 'sec2' && <Sec2 />}
