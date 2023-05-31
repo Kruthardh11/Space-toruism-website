@@ -13,7 +13,11 @@ import Navbar from './Navbar';
 
 const Technology = () => {
   const [activeSection, setActiveSection] = useState('sec3'); // Set initial active section to 1
+  const [d, setD] = useState('s1');
 
+  const handleChange =(example)=>{
+    setD(example);
+  }
   const handleSectionChange = (section) => {
     setActiveSection(section);
   };
@@ -52,17 +56,17 @@ const Technology = () => {
       <nav className="flex flex-col justify-center items-center mt-[5%] ">
       <button
         className={`mb-7 py-2 px-4 font-barlow text-xl tracking-[1px] rounded-full ${
-          activeSection === 'sec1' ? 'bg-white text-black' : 'text-white'
+          activeSection === 's1' ? 'bg-white text-black' : 'text-white'
         }`}
-        onClick={() => handleSectionChange('sec1')}
+        onClick={() => handleChange('s1')}
       >
         1
       </button>
       <button
         className={` mb-7 py-2 px-4 text-xl font-barlow tracking-[1px] rounded-full ${
-          activeSection === 'sec2' ? 'bg-white text-black' : 'text-white'
+          activeSection === 's2' ? 'bg-white text-black' : 'text-white'
         }`}
-        onClick={() => handleSectionChange('sec2')}
+        onClick={() => handleChange('s2')}
       >
         2
       </button>
@@ -70,21 +74,21 @@ const Technology = () => {
         className={`mb-7 py-2 px-4 text-xl font-barlow tracking-[1px] rounded-full ${
           activeSection === 'sec3' ? 'bg-white text-black' : 'text-white'
         }`}
-        onClick={() => handleSectionChange('sec3')}
+        onClick={() => handleChange('s3')}
       >
         3
       </button>
       </nav>
       <div className="container mt-[15%]">
         {/* Content corresponding to the active section */}
-        {activeSection === 'sec1' && <Sec1 />}
-        {activeSection === 'sec2' && <Sec2 />}
-        {activeSection === 'sec3' && <Sec3 />}
+        {d === 's1' && <Sec1 />}
+        {d === 's2' && <Sec2 />}
+        {d === 's3' && <Sec3 />}
       </div>
       <div className='mt-[20%]  '>
-        {activeSection === 'sec1' && <img className=' ' src={launchimg} alt="" />}
-        {activeSection === 'sec2' && <img className='' src={spaceimg} alt="" />}
-        {activeSection === 'sec3' && <img className='' src={spaceSportimg} alt="" />}
+        {d === 's1' && <img className=' ' src={launchimg} alt="" />}
+        {d === 's2' && <img className='' src={spaceimg} alt="" />}
+        {d === 's3' && <img className='' src={spaceSportimg} alt="" />}
       </div>
 
         
